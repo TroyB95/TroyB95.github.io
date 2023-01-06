@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { LinkedinLogo } from "../components/LinkedinLogo";
 
 const StyledMainContentArea = styled.main`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-weight: 100vw;
   background-color: #ce4b29;
 
   display: flex;
@@ -28,56 +30,63 @@ const StyledMainContentArea = styled.main`
 const StyledP = styled.p`
   margin-top: 2rem;
   width: 70%;
+
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
+
+  @media (max-width: 420px) {
+    width: 100%;
+  }
 `;
 
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Troy Budd" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <StyledMainContentArea>
-        <h1>Troy Budd</h1>
-        <StyledP>
-          Forward-thinking Software Engineer & Mentor with a background working
-          productively in dynamic environments. Fluent in TypeScript and React
-          and have found a real passion for being part of the full product
-          lifecycle. Proud team player focused on achieving project objectives
-          with speed and accuracy.
-          <br />
-          <br />I am currently at{" "}
-          <a
-            href="https://www.infogrid.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            InfoGrid
-          </a>{" "}
-          working on the Occupancy team delivering smart solutions based around
-          building Occupancy. I am also a Mentor for{" "}
-          <a
-            href="https://academy.tech/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            academy.tech
-          </a>{" "}
-          mentoring early stage juniors who have just been placed into new roles
-          <br />
-          <br />
-          Based in London, I enjoy all things Climbing, Tech, Adventure.
-        </StyledP>
+const Home = () => (
+  <>
+    <Head>
+      <title>Troy Budd</title>
+      <meta name="description" content="Personal website" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </Head>
+    <StyledMainContentArea>
+      <h1>Troy Budd</h1>
+      <StyledP>
+        Forward-thinking Software Engineer & Mentor with a background working
+        productively in dynamic environments. Fluent in TypeScript and React and
+        have found a real passion for being part of the full product lifecycle.
+        Proud team player focused on achieving project objectives with speed and
+        accuracy.
+        <br />
+        <br />I am currently at{" "}
         <a
-          href="https://www.linkedin.com/in/troybudd"
+          href="https://www.infogrid.io/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LinkedinLogo />
-        </a>
-      </StyledMainContentArea>
-    </>
-  );
-}
+          InfoGrid
+        </a>{" "}
+        working on the Occupancy team delivering smart solutions based around
+        building Occupancy. I am also a Mentor for{" "}
+        <a
+          href="https://academy.tech/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          academy.tech
+        </a>{" "}
+        mentoring early stage juniors who have just been placed into new roles
+        <br />
+        <br />
+        Based in London, I enjoy all things Climbing, Tech, Adventure.
+      </StyledP>
+      <a
+        href="https://www.linkedin.com/in/troybudd"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <LinkedinLogo />
+      </a>
+    </StyledMainContentArea>
+  </>
+);
+
+export default Home;
